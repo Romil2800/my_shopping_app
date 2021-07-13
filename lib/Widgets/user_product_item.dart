@@ -32,8 +32,30 @@ class UserProductItem extends StatelessWidget {
             IconButton(
               onPressed: () async {
                 try {
-                  Provider.of<Products>(context, listen: false)
-                      .deleteProduct(id);
+                  showDialog(
+                    context: context,
+                    builder: (ctx) => AlertDialog(
+                      title: Text('Are you sure'),
+                      content:
+                          Text('Do you want to remove item from the list?'),
+                      actions: [
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.of(ctx).pop(false);
+                          },
+                          child: Text('NO'),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.of(ctx).pop(true);
+                            Provider.of<Products>(context, listen: false)
+                                .deleteProduct(id);
+                          },
+                          child: Text('YES'),
+                        ),
+                      ],
+                    ),
+                  );
                 } catch (error) {
                   scaffold.showSnackBar(
                     SnackBar(

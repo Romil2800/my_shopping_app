@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_shopping_app/helpers/custom_route.dart';
-import '../screens/orders_screen.dart';
+import '../screens/auth_screen.dart';
+import '../screens/user_product_screen.dart';
 import '../screens/orders_screen.dart';
 import '../providers/auth.dart';
 import 'package:provider/provider.dart';
@@ -12,7 +12,7 @@ class AppDrawer extends StatelessWidget {
         child: Column(
       children: [
         AppBar(
-          title: Text('Hello Friend!'),
+          title: Text('Hello Friend!' + AuthScreen.routeName),
           automaticallyImplyLeading: false,
         ),
         Divider(),
@@ -36,10 +36,10 @@ class AppDrawer extends StatelessWidget {
           leading: Icon(Icons.edit),
           title: Text('Manage Products'),
           onTap: () {
-            // Navigator.of(context)
-            //     .pushReplacementNamed(UserProductScreen.routeName);
             Navigator.of(context)
-                .pushReplacement(CustomRoute(builder: (ctx) => OrderScreen()));
+                .pushReplacementNamed(UserProductScreen.routeName);
+            // Navigator.of(context)
+            //     .pushReplacement(CustomRoute(builder: (ctx) => OrderScreen()));
           },
         ),
         Divider(),
