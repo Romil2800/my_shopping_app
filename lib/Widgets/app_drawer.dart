@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../screens/auth_screen.dart';
 import '../screens/user_product_screen.dart';
 import '../screens/orders_screen.dart';
 import '../providers/auth.dart';
@@ -12,7 +11,7 @@ class AppDrawer extends StatelessWidget {
         child: Column(
       children: [
         AppBar(
-          title: Text('Hello Friend!' + AuthScreen.routeName),
+          title: Text('Hello Friend!'),
           automaticallyImplyLeading: false,
         ),
         Divider(),
