@@ -1,8 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.my_shopping_app">
+    package="com.shoppingapp.my_shopping_app">
+
+    <uses-permission android:name="android.permission.INTERNET" />
    <application
-        android:label="my_shopping_app"
-        android:icon="@mipmap/ic_launcher">
+        android:label="Shopping App"
+        android:icon="@drawable/splash_icon">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
