@@ -28,7 +28,7 @@ class Product with ChangeNotifier {
     isFavorite = !isFavorite;
     notifyListeners();
     final url = Uri.parse(
-        'https://shopping-cart-app-a0ab5-default-rtdb.firebaseio.com/userFavorites/$userId/$id.json?auth=$token');
+        'firebase_url_address/userFavorites/$userId/$id.json?auth=$token');
     try {
       final response = await http.put(
         url,
